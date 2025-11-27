@@ -1,5 +1,6 @@
 import Header from "@/components/header";
 import RecordCalendar from "@/components/recordCalendar";
+import Streak from "@/components/streakComponent";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 
 export default function RecordScreen() {
@@ -9,10 +10,8 @@ export default function RecordScreen() {
           <View style={styles.contentContainer}>
            
             <RecordCalendar />
-             {/*
             <Streak />
-            <Streak />
-            */}
+            {/*<Streak />*/}
             
           </View>
     </SafeAreaView>

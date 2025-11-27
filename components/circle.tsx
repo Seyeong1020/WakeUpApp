@@ -8,9 +8,11 @@ const BASE_SIZE = 60;
 const GROWTH_RATE = 15;
 const MAX_SIZE = 160;
 
+const streak = 7;
+
+
 export default function GrowingCircle(){
     
-    const streak = 7;
     const imgSize = Math.min(BASE_SIZE + (streak * GROWTH_RATE), MAX_SIZE);
     const currentMarginTop = -imgSize + 50;
 
