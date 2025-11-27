@@ -22,6 +22,7 @@ export default function HomeDate(){
     const dates = getPastWeek();
     const currentDate = new Date().getDate(); //오늘 날짜
     const activeDates = [dates[0], dates[4], dates[5], dates[6]]; // 임시로 활동 일 해두기
+    
     return (
         <View style={styles.dateContainer}>
             <View style={styles.line} />
