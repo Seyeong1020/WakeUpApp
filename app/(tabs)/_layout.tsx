@@ -1,35 +1,38 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { Tabs } from "expo-router";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+        screenOptions={{
+            // header
+            headerShown: false,
+
+            // tabBar
+            tabBarIcon: () => null, //아이콘 없어지게
+            tabBarActiveTintColor: '#66BB6A',
+            tabBarStyle: {
+                backgroundColor: '#E8F5E9'
+            },
+        }}>
+        <Tabs.Screen 
+            name="record"
+            options={{
+                title: '전체 기록 보기'
+            }}
+        />
+        <Tabs.Screen
+            name= "index"
+            options={{
+                title: '홈',
+            }}
+        />
+        <Tabs.Screen
+            name= "profile"
+            options={{
+                title: '프로필',
+            }}
+        />
     </Tabs>
+    
   );
 }
